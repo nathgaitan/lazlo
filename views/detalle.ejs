@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/head')%> 
+<body class="detalle">
+     
+    <%-include('./partials/header')%>  
+    <main>
+        <section class="producto">
+            <div class="productoImagen">
+                <div class="all-images">
+                    <% product.images.forEach(image=> { %>
+                        <img id="img-prev1" src="/images/products/<%= image.file %>" alt=""
+                            onclick="document.getElementById('main-image').setAttribute('src','/images/products/<%=image.file%>')">
+                        <% }) %>
+                </div>
+                <div class="main-image">
+                    <img id="main-image" src="/images/products/<%= product.images[0].file %>" alt="">
+                </div>               
+            </div>
+            <div class="productoDetalle">
+                <div class="productoNombre">
+                    <h3 class="categoria"><%= product.category.name %></h3>
+                    <h1><%= product.name %></h1> 
+                </div>            
+                <div class="precios-estrellas">
+                    <div>
+                        <h3 class="precio">$ <%= product.price %></h3>
+                    </div>
+                    <p class="estrellas">
+                        <% if (avg === 0) { %>
+                            <% for( let i = 0; i < 5; i++ ) { %>
+                                <i class="far fa-star"></i>
+                            <% } %>
+                        <% } else {%>
+                            <% for( let i = 0; i < avg; i++ ) { %>
+                                <i class="fas fa-star"></i>
+                            <% } %>
+                            <% for( let i = 0; i < (5 - avg); i++ ) { %>
+                                <i class="far fa-star"></i>
+                            <% } %>
+                        <% }%>
+                    </p>
+                </div>
+                <div class="envio">
+                    <p>Envio gratis</p>
+                </div>
+                <div class="caracteristicasFormulario">
+                    <form action="">
+                        <div class="select caja-form">
+                            <label for="color">Color:</label>
+                            <select name="color" id="color">
+                                <option value="-" selected hidden>Elegí el color</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color.id %>"><%= color.name %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <% if (sizes.length > 0) { %>
+                            <div class="select caja-form">
+                                <label for="talle">Talle:</label>
+                                <select name="talle" id="talle">
+                                    <option value="" selected hidden>Eligí talle</option>
+                                    <% sizes.forEach(size => { %>
+                                        <option value="<%= size.id %>"><%= size.name %></option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                        <% } else {%>
+                            <span></span>
+                        <% }%>
+                        <button onclick="addItem(event,'<%= product.id %>')">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="infoProducto">
+            <h2>Información del producto</h2>
+            <p><%= product.description %></p>
+        </section>
+        <section class="reseñas">
+        <% if (reviews.length > 0) { %>
+         
+            <h2>Reseñas</h2>
+            <% reviews.forEach(review => { %>
+                <div class="reseña">
+                    <div class="nombre-estrellas">
+                        <h3><%= review.user.firstName %> </h3>
+                        <p class="estrellas">
+                            <% for( let i = 0; i < review.stars; i++ ) { %>
+                                <i class="fas fa-star"></i>
+                            <% } %>
+                            <% for( let i = 0; i < (5 - review.stars); i++ ) { %>
+                                <i class="far fa-star"></i>
+                            <% } %>
+                        </p>
+                    </div>
+                    <p><%= review.review %></p>
+                </div>
+            <% }) %>
+        <% } else { null } %>
+
+        
+            
+
+            <% if (locals.loginUsuario) { %>
+
+                <div class="formularioReseñas">
+                    <h3>Dejanos tu reseña</h3>
+                    <form method="POST">
+                        <div class="labelStars">
+                            <label for="one" class="star_unactive starsLabel"><i class="fas fa-star"></i></label>
+                            <label for="two" class="star_unactive starsLabel"><i class="fas fa-star"></i></label>
+                            <label for="three" class="star_unactive starsLabel"><i class="fas fa-star"></i></label>
+                            <label for="four" class="star_unactive starsLabel"><i class="fas fa-star"></i></label>
+                            <label for="five" class="star_unactive starsLabel"><i class="fas fa-star"></i></label>
+                        </div>
+                        <div class="stars" id="stars">
+                            <input type="radio" name="stars" value="1" class="star star_unactive" id="one">
+                            <input type="radio" name="stars" value="2" class="star star_unactive" id="two">
+                            <input type="radio" name="stars" value="3" class="star star_unactive" id="three">
+                            <input type="radio" name="stars" value="4" class="star star_unactive" id="four">
+                            <input type="radio" name="stars" value="5" class="star star_unactive" id="five">
+                        </div>
+                        <div class="textarea">
+                            <textarea name="review" id="comentario" placeholder="Aquí tu comentario"></textarea>
+                        </div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
+                <% } else { null }%>
+
+        </section>
+        <section class="productosRelacionados">
+            <h2>Prodúctos relacionados</h2>
+        
+            <!-- carrucel -->
+        
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    
+                    <% mochilas.forEach(mochila=> { %>
+                        <li class="glide__slide">
+                            <a href="/productos/detalle/<%= mochila.id %>" class="relacionadoContenedor">
+                            <div class="relacionado">
+                                <div class="imagenRelacionado">
+                                    <img src="/images/products/<%= mochila.images[0].file %>" alt="">
+                                </div>
+                                <div class="detalleRelacionado">
+                                    <h3><%= mochila.name %></h3>
+                                    <h4>$ <%= mochila.price %></h4>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                    <% }) %>
+                                                            
+                  </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                  <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-caret-left"></i></button>
+                  <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-caret-right"></i></button>
+                </div>
+              </div>
+        </section>
+    </main>
+    <%-include('./partials/footer')%> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+    
+    <script src="/javascripts/glide.js"></script>
+    <script src="/javascripts/index.js"></script>
+    <script src="/javascripts/cart.js"></script>
+    <script src="/javascripts/detalleStars.js"></script>   
+</body>
+</html>

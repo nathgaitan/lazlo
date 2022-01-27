@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include('./partials/head')%> 
+
+<body class="carrito">
+     
+    <%-include('./partials/header')%> 
+    <main>
+        <h2>Mi Carrito</h2>
+        <section class="productosCarrito">
+            <table>
+                <tr class="t-body">
+                    <td><img src="images/mochila.jpeg"></td>
+                    <td>Nombre producto</td>
+                    <td>$1234</td>
+                    <td><div>1</div></td>
+                    <td><div>X</div></td>
+                </tr>
+                <tr class="t-body">
+                    <td><img src="images/mochila2.jpeg"></td>
+                    <td>Nombre producto</td>
+                    <td>$1234</td>
+                    <td><div>1</div></td>
+                    <td><div>X</div></td>
+                </tr>
+                <tr class="t-body">
+                    <td><img src="images/mochila3.jpeg"></td>
+                    <td>Nombre producto</td>
+                    <td>$1234</td>
+                    <td><div>1</div></td>
+                    <td><div>X</div></td>
+                </tr>
+            </table>
+            <button class="btn-vaciar btn">Vaciar carrito</button>
+        </section>
+        <section class="envioCarrito">
+            <div class="envio">
+                <form action="">
+                    <div class="input radio">
+                        <p>Solicitar envio express  <i class="fas fa-shipping-fast"></i></p>
+                        <label for="envio-si">Sí</label>
+                        <input type="radio" name="envio" value="si" id="envio-si" checked>
+                        <label for="envio-no">No</label>
+                        <input type="radio" name="envio" value="no" id="envio-no">
+                    </div>
+                    <div class="select full-width">
+                        <select name="provincias">
+                            <option value="-" selected hidden>Provincia</option>
+                            <option value="ba">Buenos Aires</option>
+                            <option value="ca">Catamarca</option>
+                            <option value="ch">Chaco</option>
+                            <option value="ct">Chubut</option>
+                            <option value="cb">Córdoba</option>
+                            <option value="cr">Corrientes</option>
+                            <option value="er">Entre Ríos</option>
+                            <option value="fo">Formosa</option>
+                            <option value="jy">Jujuy</option>
+                            <option value="lp">La Pampa</option>
+                            <option value="lr">La Rioja</option>
+                            <option value="mz">Mendoza</option>
+                            <option value="mi">Miciones</option>
+                            <option value="nqn">Neuquén</option>
+                            <option value="rn">Rio Negro</option>
+                            <option value="sa">Salta</option>
+                            <option value="sj">San Juan</option>
+                            <option value="sl">San Luis</option>
+                            <option value="sc">Santa Cruz</option>
+                            <option value="sf">Santa Fe</option>
+                            <option value="sw">Santiago del Estero</option>
+                            <option value="tf">Tierra del Fuego</option>
+                            <option value="tu">Tucumán</option>
+                        </select>
+                    </div>
+                    <div class="select full-width">
+                        <select name="Localidad">
+                            <option value="-" selected hidden>Localidad</option>
+                            <option value="ba">Buenos Aires</option>
+                            <option value="ca">Catamarca</option>
+                        </select>
+                    </div>
+                    <div class="input full-width">
+                        <input type="number" name="codigo-postal" placeholder="Código postal">
+                    </div>
+                    <div class="input full-width">
+                        <input type="text" name="calle" placeholder="Calle">
+                    </div>
+                    <div class="input full-width">
+                        <input type="text" name="numero-calle" placeholder="Número / Piso / Depto">
+                    </div>
+                </form>
+            </div>
+            <div class="totalCarrito">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$9876</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>$9987</td>
+                    </tr>
+                </table>
+                <button class="btn-comprar  btn">Comprar</button>
+            </div>
+        </section>
+    </main>
+    <%-include('./partials/footer')%> 
+
+</body>
+</html>

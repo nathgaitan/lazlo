@@ -1,0 +1,120 @@
+body .comunidad {
+  background-color: white;
+}
+
+body .comunidad .contenedor {
+  display: block;
+  background-color: #ffffff;
+  padding: 10px;
+}
+body .comunidad .contenedor .articulo {
+  display: flex;
+  width: 100%;
+  height: 100 px;
+  text-align: center;
+  flex-direction: column;
+  border: rgb(63, 58, 48);
+  /*background-color:rgb(216, 199, 180);*/
+  padding: 15px;
+}
+body .comunidad .contenedor .articulo .descripcionC{
+  background-color :  rgba(216, 199, 180, .3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+
+  width: 100%;
+}
+body .comunidad .contenedor .articulo .descripcionC p{
+ 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+body .comunidad .contenedor .articulo .image{
+  margin: 0 auto;
+  height: 200px;
+  width:  100%;
+  border-radius: 5px;
+}
+body .comunidad .contenedor .articulo .image img {
+  padding: 7px;
+  padding-bottom: 50px;
+  height: 200px;
+  width: 200px;
+  border: rgb(32, 32, 32) solid 1px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 5px 5px 10px #888;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+body .comunidad .comentario {
+  text-align: center;
+  /*background-color: rgb(216, 199, 180);*/
+  padding: 10px;
+}
+
+body .comunidad .comentario textarea {
+  width: 80%;
+  border: rgb(39, 38, 37) solid 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  body .comunidad .contenedor .articulo {
+
+    margin: 5px;
+    display: flex;
+    width: 100%;
+    height: 100 px;
+    text-align: center;
+    flex-direction: row;
+    /*background-color: rgb(216, 199, 180);*/
+  }
+  body .comunidad .contenedor .articulo .descripcionC{
+    width: 60%;
+  }
+  body .comunidad .contenedor .articulo .image{
+  
+    height: 200px;
+    width: 40%;
+    
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body .comunidad .contenedor .articulo {
+    display: flex;
+    width: 100%;
+    height: 100 px;
+    text-align: center;
+    flex-direction: row;
+  }
+  body .comunidad .contenedor .articulo .descripcionC{
+    width: 60%;
+  }
+  body .comunidad .contenedor .articulo .image{
+  
+    height: 200px;
+    width: 40%;
+    
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,63 @@
+.vistaPrevia{
+    position: relative;
+}
+
+.eliminarImagen{
+    position: absolute;
+    top:-15px;
+    right: 55px;
+    font-size: 30px;
+    color:tomato;
+    transition: color .5s;
+}
+
+.eliminarImagen:hover{
+    color:rgb(219, 59, 31);
+}
+
+.formularioProducto{
+    width: 95%;
+    margin: 30px auto;
+}
+
+.formularioProducto h2{
+    margin: 20px 0 40px !important;
+    color: var(--marron);
+    
+}
+
+.btn.marron{
+    width: 100%;
+    background-color: var(--marron);
+    border: 1px solid   var(--marron);
+    color:  #fff;
+    margin: 20px 0 0;
+    transition: opacity .5s;
+}
+
+.btn.marron:hover{
+    color:  #fff;
+    opacity: .8;
+}
+
+@media (min-width : 768px){
+    .formularioProducto{
+        width: 80%;
+    }
+    .btn.marron{
+        margin: 30px 0 0;
+    }
+    
+}
+
+
+
+@media (min-width : 1024px){
+    .formularioProducto{
+        width: 70%;
+    }
+    .btn.marron{
+        margin: 40px 0 0;
+    }
+    
+}

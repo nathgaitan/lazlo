@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('./partials/head')%>
+<body>
+        <%-include('./partials/header')%>
+
+            <main class="comunidad">
+                <div class="contenedor">
+                    <% comentarios.forEach(comentario => { %>
+                        <section class="articulo">
+                            <div class="image">
+                                <img src="/images/community/<%= comentario.image %> " alt="" />
+    
+                            </div>
+                            <div class="descripcionC">
+                                
+                                <p>
+                                  <%= comentario.comment %>   
+                                </p>
+                                <h2><%= comentario.users.firstName %> </h2>
+                            </div>
+    
+    
+                        </section>
+                    <% }) %>
+                    
+                    <!--section class="articulo">
+                        <div class="image">
+                            <img src="/images/mochi2.jpg" alt="" />
+
+                        </div>
+                        <div class="descripcionC">
+                            <h2>"-Accesible,comodo y practico-"</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                                suscipit vitae ut. Sapiente cupiditate, omnis rerum corrupti tenetur
+                                quae molestias cumque tempore nostrum! Voluptatibus, omnis
+                                aspernatur. Nemo dicta rerum dolorum.
+                            </p>
+                            <h2>Maria , 29 años</h2>
+                        </div>
+
+
+                    </!--section>
+                    <section class="articulo">
+                        <div class="image">
+                            <img src="/images/mochi3.jpg" alt="" />
+
+                        </div>
+                        <div class="descripcionC">
+                            <h2>"-Es justo lo que estaba buscando-"</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                                suscipit vitae ut. Sapiente cupiditate, omnis rerum corrupti tenetur
+                                quae molestias cumque tempore nostrum! Voluptatibus, omnis
+                                aspernatur. Nemo dicta rerum dolorum.
+                            </p>
+                            <h2>Luciano , 23 años</h2>
+                        </div>
+
+
+                    </section>
+                    <section-- class="articulo">
+                        <div class="image">
+                            <img src="/images/mochi4.jpg" alt="" />
+
+                        </div>
+                        <div class="descripcionC">
+                            <h2>"-Una exelente experiencia!-"</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                                suscipit vitae ut. Sapiente cupiditate, omnis rerum corrupti tenetur
+                                quae molestias cumque tempore nostrum! Voluptatibus, omnis
+                                aspernatur. Nemo dicta rerum dolorum.
+                            </p>
+                            <h2>Marcos , 30 años</h2>
+                        </div>
+
+
+                    </section-->
+                </div>
+                <% if (locals.loginUsuario) { %>
+                <div class="comentario">
+
+                    <form  method="POST" enctype="multipart/form-data"
+                    >
+
+                        <div class="caja-comentario">
+                            
+                            <textarea name="comentario" id="comentario" cols="30"
+                                rows="10"></textarea>
+                                <input type="file" name="foto" id="fotoComunity">
+                        </div>
+                        <div>
+                           <button type="submit">Enviar Comentario</button>
+                        </div>
+
+
+                    </form>
+
+                </div>
+                <% } %> 
+            </main>
+            <%-include('./partials/footer')%>
+            <script src="/javascripts/cart.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>

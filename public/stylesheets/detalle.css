@@ -1,0 +1,376 @@
+.detalle main {
+    width: 92%;
+    margin: 20px auto;
+}
+
+.producto p, .producto h3, .producto h1, .producto h2{
+    text-align:left;
+}
+
+.producto h3, .producto h1{
+    text-transform: capitalize;
+}
+
+.producto .categoria{color: var(--marron)}
+
+
+.reseñas p, .infoProducto p{
+    text-align:left;
+}
+
+.detalle img {
+    max-width: 100%;
+    display:block;
+}
+
+.productoImagen{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+}
+
+
+.all-images{
+    display: flex;
+}
+
+.all-images img{
+    width: 33%;
+    border: 1px solid var(--grisClaro);
+    cursor: pointer;
+}
+
+.all-images img:nth-child(2){
+    border: 1px solid var(--grisClaro);
+    border-left: none;
+    border-right: none;
+}
+
+
+/*-- DETALLE DEL PRODUCTO --*/
+
+.detalle .producto  .productoDetalle h1{
+    margin: 10px 0 20px;
+}
+
+.detalle .producto .precios-estrellas{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin: 30px 0;
+}
+
+.detalle .producto .precio{
+    font-size: 2em;
+}
+
+.detalle .producto .precios-estrellas h3, .detalle .producto .precios-estrellas h4{
+    display: inline;
+}
+
+
+.detalle .producto .caracteristicasFormulario .caja-form{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 30px;
+}
+
+.detalle .producto .caracteristicasFormulario .caja-form select, .detalle .producto .caracteristicasFormulario .caja-form input{
+    width: 150px;
+    padding: 5px;
+    border-radius: 3px; 
+    border: 1px solid #000;
+}
+
+.detalle .producto .caracteristicasFormulario button{
+    width: 100%;
+    background-color: var(--marron);
+    color:#fff;
+    padding: 5px;
+    border-radius:5px;
+    border:none;
+    cursor:pointer;
+    transition: opacity .5s;
+}
+
+.detalle .producto .caracteristicasFormulario button:hover{
+    opacity: .8;
+}
+
+.detalle .infoProducto, .detalle .reseñas{
+    margin: 30px 0;
+}
+
+.detalle .infoProducto h2, .detalle .reseñas h2{
+    margin: 0 0 15px;
+    color: var(--marron);
+    border-bottom: 2px dashed var(--marron);
+    padding: 0 0 5px; 
+    width: 80%;
+}
+
+/*-- INFROMACIÓN DEL PRODUCTO --*/
+
+.detalle .infoProducto h3{
+    margin: 8px 0 0;
+}
+
+/*-- RESEÑAS --*/
+
+.detalle .reseñas .nombre-estrellas{
+    margin: 10px 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reseña{
+    border: 1px solid rgba(211, 211, 211, .5);
+    padding:5px 10px;
+    margin: 20px 0;
+}
+
+.formularioReseñas {
+    width: 100%;
+    margin: 80px 0;
+  }
+
+  .formularioReseñas h3{
+      margin: 0 0 20px;
+  }
+  
+  .formularioReseñas .labelStars {
+    width: auto;
+    display: inline-block;
+    margin: 10px 0 20px;
+    cursor: pointer;
+  }
+  
+  .formularioReseñas .star_unactive {
+    color: rgba(128, 128, 128, 0.7);
+    font-size: 18px;
+    transition: all .5s;
+    cursor: pointer;
+  }
+
+  .formularioReseñas .star_active {
+    color: var(--grisOscuro);
+    font-size: 18px;
+    transition: all .5s;
+    cursor: pointer;
+  }
+
+
+  .formularioReseñas .stars {
+    display: none;
+  }
+  
+  .formularioReseñas .textarea {
+    width: 100%;
+  }
+  
+  .formularioReseñas .textarea textarea {
+      padding: 5px;
+    width: 100%;
+    height: 170px;
+    border: 1px solid var(--grisOscuro);
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .formularioReseñas button {
+    margin: 10px 0 0;
+    background-color: var(--marron);
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    display: block;
+  }
+
+
+/*-- CARRUCEL DE PRODUCTOS --*/
+
+.detalle .productosRelacionados{
+    margin: 30px auto 0;
+}
+
+.detalle .productosRelacionados h2{
+    margin:40px 0;
+    text-align: center;
+}
+
+.detalle .productosRelacionados .relacionado{
+    display:flex;
+    justify-content: space-between;
+    align-items:stretch;
+    flex-direction: column;
+    border: 2px solid var(--marron);
+    padding: 20px; 
+}
+
+.relacionadoContenedor{
+    text-decoration: none;
+}
+
+.detalleRelacionado h3, .detalleRelacionado h4{
+    color: var(--grisOscuro);
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+
+.relacionado h3{
+    font-size: 1.5em;
+}
+
+.glide__arrow{
+    border-color: var(--grisOscuro)  !important;
+    color:var(--grisOscuro)  !important;
+}
+
+.detalle .productosRelacionados .relacionado .detalleRelacionado{
+    margin: 20px 0 0;
+    padding: 20px 0 0; 
+    border-top: 2px dashed var(--marron);
+}
+
+.detalle .productosRelacionados .relacionado .detalleRelacionado h3{
+    margin: 0 0 10px;
+}
+
+.detalle .productosRelacionados .relacionado .imagenRelacionado{
+    height: 260px;
+}
+
+.detalle .productosRelacionados .relacionado .imagenRelacionado img{
+    height: 250px;
+    margin: 5px auto;
+}
+
+/*---MEDIA QUERY---*/
+/*--tablet--*/
+
+@media (min-width : 768px){
+
+
+   /*-- DETALLE DEL PRODUCTO --*/
+
+    .detalle .producto{
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .detalle .producto .productoImagen, .detalle .producto  .productoDetalle{
+        width: 46%;
+    }
+
+    .detalle .infoProducto h2, .detalle .reseñas h2{
+        width: 60%;
+    }
+
+    /*-- RESEÑAS --*/
+
+    .detalle .reseñas .nombre-estrellas{
+        width: 50%;
+    }
+
+    /*-- CARRUCEL DE PRODUCTOS --*/
+
+    .detalle .productosRelacionados .relacionado{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .detalle .productosRelacionados .relacionado .imagenRelacionado{
+        height: 200px;
+    }
+    
+    .detalle .productosRelacionados .relacionado .imagenRelacionado img{
+        height: 190px;
+    }
+}
+
+/*--desktop--*/
+
+@media (min-width : 1024px){
+
+    .productoImagen{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+    }
+    
+    
+    .all-images{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .all-images img{
+        width: 100%;
+    }
+
+    .all-images img:nth-child(2){
+        border: 1px solid var(--grisClaro);
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .main-image{
+        width: 80%;
+        padding:0 20px;
+    }
+
+    /*-- DETALLE DEL PRODUCTO --*/
+
+    .detalle .producto{
+        margin: 20px 0;
+    }
+
+    .detalle .producto  .productoDetalle{
+        margin: 30px 0;
+    }
+
+    .detalle .infoProducto h2, .detalle .reseñas h2{
+        width: 50%;
+    }
+
+    .detalle .infoProducto{
+        width: 90%;
+        margin: 30px auto 80px;
+    }
+
+    
+    /*-- RESEÑAS --*/
+    .detalle .reseñas{
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .detalle .reseñas .nombre-estrellas{
+        width: 30%;
+    }
+
+    /*-- CARRUCEL DE PRODUCTOS --*/
+
+    .detalle .productosRelacionados h2{
+        margin:50px 0 40px;
+        text-align: center;
+    }
+
+    .detalle .productosRelacionados .relacionado{
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .detalle .productosRelacionados .relacionado .imagenRelacionado{
+        height: 180px;
+    }
+    
+    .detalle .productosRelacionados .relacionado .imagenRelacionado img{
+        height: 170px;
+    }
+}
